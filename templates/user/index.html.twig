@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegisterController!{% endblock %}
+
+{% block body %}
+
+
+<div class="row">
+  <h2 class="text-center">Liste des utilisateurs</h2>
+<div class="container">
+    <div class="col-6">
+        {# <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+    {% for user in users %}
+    <td>{{user.nom}}</td>
+    <td>{{user.prenom}}</td>
+    <td>{{user.email}}</td>
+    </tr>
+  </tbody> #}
+
+  <section class="container m-5">
+    <div class="row ">
+        {% for user in users %}
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">{{user.nom}}</p>
+                <p class="card-text">{{user.prenom}}</p>
+                <p class="card-text">{{user.email}}</p>
+                <a href="{{path('app_user_delete', {id:user.id})}}" class="btn btn-danger">Supprimer</a>
+              
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+
+
+</div>
+{% endblock %}
